@@ -1,0 +1,48 @@
+<Project name="Wex">
+	<Settings>
+		<Standard>c++11</Standard>
+		<Subsystem>windows</Subsystem>
+		<Warnings>all</Warnings>
+		<WarningsAsErrors>True</WarningsAsErrors>
+		<OptimizationLevel>0</OptimizationLevel>
+		<Target>DLL</Target>
+		<Architecture>64-bit</Architecture>
+		<DebugInfo>False</DebugInfo>
+		<Multithreaded>True</Multithreaded>
+		<OutputFolder>output</OutputFolder>
+		<OutputFileName>{ProjectName}.dll</OutputFileName>
+		<IncludeDirectories>
+			<IncludeDirectory>c:\save\code</IncludeDirectory>
+		</IncludeDirectories>
+		<Libraries/>
+		<ProjectReferences/>
+	</Settings>
+	<Files>
+		<Folder name="Classes">
+			<Folder name="Exception">
+				<File>Exception.h</File>
+				<File>Exception.cpp</File>
+				<File>Exception.Test.cpp</File>
+			</Folder>
+			<Folder name="ScopedResource">
+				<File>ScopedResource.h</File>
+				<File>ScopedResource.Test.cpp</File>
+			</Folder>
+			<Folder name="LocalMemory">
+				<File>LocalMemory.h</File>
+				<File>LocalMemory.Test.cpp</File>
+			</Folder>
+			<Folder name="GlobalMemory">
+				<File>GlobalMemory.h</File>
+				<File>GlobalMemory.Test.cpp</File>
+			</Folder>
+		</Folder>
+		<Folder name="Resources"/>
+		<Folder name="Headers">
+			<File>WindowsInclude.h</File>
+		</Folder>
+		<File>main.cpp</File>
+		<File>main.Test.cpp</File>
+	</Files>
+</Project>
+
