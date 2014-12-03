@@ -58,6 +58,11 @@
 					<File>Size.cpp</File>
 					<File>Size.Test.cpp</File>
 				</Folder>
+				<Folder name="Point">
+					<File>Point.h</File>
+					<File>Point.cpp</File>
+					<File>Point.Test.cpp</File>
+				</Folder>
 			</Folder>
 		</Folder>
 		<Folder name="Resources">
