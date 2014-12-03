@@ -41,7 +41,7 @@ namespace Wex
 			Assert.AreEqual(errorCode, exception.GetErrorCode());
 			Assert.AreEqual(description, exception.GetDescription());
 		}
-	
+
 		TEST_METHOD(What)
 		{
 			Exception exception;
@@ -49,7 +49,7 @@ namespace Wex
 				exception.GetFullDescription().c_str(),
 				exception.what());
 		}
-	
+
 		TEST_METHOD(FullDescription)
 		{
 			Exception exception
@@ -76,7 +76,7 @@ namespace Wex
 			};
 			Assert.AreEqual(expected, exception.GetFullDescription());
 		}
-	
+
 		TEST_METHOD(ThrowExceptionMacro)
 		{
 			const std::string location{ "location" };
@@ -94,7 +94,7 @@ namespace Wex
 				Assert.AreEqual(previousLine + 1, exception.GetLine());
 				Assert.AreEqual(std::string{ __DATE__ " " __TIME__ }, exception.GetWhenCompiled());
 				Assert.AreEqual(std::string{ __TIMESTAMP__ }, exception.GetWhenModified());
-				Assert.AreEqual(std::string{ __FUNCTION__ }, exception.GetFunction());
+				Assert.AreEqual(std::string{ __PRETTY_FUNCTION__ }, exception.GetFunction());
 				Assert.AreEqual(location, exception.GetLocation());
 				Assert.AreEqual(errorCode, exception.GetErrorCode());
 				Assert.AreEqual(description, exception.GetDescription());

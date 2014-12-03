@@ -1,4 +1,4 @@
-#include <windows.h>
+#include "WindowsInclude.h"
 
 extern "C" BOOL __stdcall DllMain(
 	HINSTANCE instance,

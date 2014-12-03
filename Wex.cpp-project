@@ -14,30 +14,50 @@
 		<IncludeDirectories>
 			<IncludeDirectory>c:\save\code</IncludeDirectory>
 		</IncludeDirectories>
-		<Libraries/>
+		<Libraries>
+			<Library>comctl32</Library>
+		</Libraries>
 		<ProjectReferences/>
 	</Settings>
 	<Files>
 		<Folder name="Classes">
-			<Folder name="Exception">
-				<File>Exception.h</File>
-				<File>Exception.cpp</File>
-				<File>Exception.Test.cpp</File>
+			<Folder name="Scoped Resources">
+				<Folder name="ScopedResource">
+					<File>ScopedResource.h</File>
+					<File>ScopedResource.Test.cpp</File>
+				</Folder>
+				<Folder name="LocalMemory">
+					<File>LocalMemory.h</File>
+					<File>LocalMemory.Test.cpp</File>
+				</Folder>
+				<Folder name="GlobalMemory">
+					<File>GlobalMemory.h</File>
+					<File>GlobalMemory.Test.cpp</File>
+				</Folder>
 			</Folder>
-			<Folder name="ScopedResource">
-				<File>ScopedResource.h</File>
-				<File>ScopedResource.Test.cpp</File>
+			<Folder name="ProcessInstance">
+				<File>ProcessInstance.h</File>
+				<File>ProcessInstance.cpp</File>
+				<File>ProcessInstance.Test.cpp</File>
 			</Folder>
-			<Folder name="LocalMemory">
-				<File>LocalMemory.h</File>
-				<File>LocalMemory.Test.cpp</File>
-			</Folder>
-			<Folder name="GlobalMemory">
-				<File>GlobalMemory.h</File>
-				<File>GlobalMemory.Test.cpp</File>
+			<Folder name="Exceptions">
+				<Folder name="Exception">
+					<File>Exception.h</File>
+					<File>Exception.cpp</File>
+					<File>Exception.Test.cpp</File>
+				</Folder>
+				<Folder name="WindowsException">
+					<File>WindowsException.h</File>
+					<File>WindowsException.cpp</File>
+					<File>WindowsException.Test.cpp</File>
+				</Folder>
 			</Folder>
 		</Folder>
-		<Folder name="Resources"/>
+		<Folder name="Resources">
+			<File>resource.h</File>
+			<File>resource.rc</File>
+			<File>manifest.xml</File>
+		</Folder>
 		<Folder name="Headers">
 			<File>WindowsInclude.h</File>
 		</Folder>

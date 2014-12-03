@@ -55,7 +55,7 @@ namespace Wex
 		__LINE__, \
 		__DATE__ " " __TIME__, \
 		__TIMESTAMP__, \
-		__FUNCTION__, \
+		__PRETTY_FUNCTION__, \
 		location, \
 		errorCode, \
 		description \
