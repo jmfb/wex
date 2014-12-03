@@ -52,6 +52,13 @@
 					<File>WindowsException.Test.cpp</File>
 				</Folder>
 			</Folder>
+			<Folder name="Graphics">
+				<Folder name="Size">
+					<File>Size.h</File>
+					<File>Size.cpp</File>
+					<File>Size.Test.cpp</File>
+				</Folder>
+			</Folder>
 		</Folder>
 		<Folder name="Resources">
 			<File>resource.h</File>

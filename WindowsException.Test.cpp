@@ -39,7 +39,7 @@ namespace Wex
 				CheckLastWindowsError(true, location);
 				Assert.Fail();
 			}
-			catch (const Wex::Exception& exception)
+			catch (const Exception& exception)
 			{
 				Assert.AreEqual(location, exception.GetLocation());
 				Assert.AreEqual(errorCode, exception.GetErrorCode());

@@ -42,7 +42,7 @@ namespace Wex
 				ProcessInstance::Initialize(nullptr);
 				Assert.Fail();
 			}
-			catch (const Wex::Exception& exception)
+			catch (const Exception& exception)
 			{
 				Assert.AreEqual(std::string{ "InitCommonControlsEx" }, exception.GetLocation());
 			}
