@@ -63,6 +63,11 @@
 					<File>Point.cpp</File>
 					<File>Point.Test.cpp</File>
 				</Folder>
+				<Folder name="Rect">
+					<File>Rect.h</File>
+					<File>Rect.cpp</File>
+					<File>Rect.Test.cpp</File>
+				</Folder>
 			</Folder>
 		</Folder>
 		<Folder name="Resources">
