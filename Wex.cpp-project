@@ -16,6 +16,7 @@
 		</IncludeDirectories>
 		<Libraries>
 			<Library>comctl32</Library>
+			<Library>gdi32</Library>
 		</Libraries>
 		<ProjectReferences/>
 	</Settings>
@@ -67,6 +68,18 @@
 					<File>Rect.h</File>
 					<File>Rect.cpp</File>
 					<File>Rect.Test.cpp</File>
+				</Folder>
+				<Folder name="Objects">
+					<Folder name="GraphicsObject">
+						<File>GraphicsObject.h</File>
+						<File>GraphicsObject.cpp</File>
+						<File>GraphicsObject.Test.cpp</File>
+					</Folder>
+					<Folder name="Brush">
+						<File>Brush.h</File>
+						<File>Brush.cpp</File>
+						<File>Brush.Test.cpp</File>
+					</Folder>
 				</Folder>
 			</Folder>
 		</Folder>

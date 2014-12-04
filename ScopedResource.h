@@ -8,7 +8,7 @@ namespace Wex
 	{
 	public:
 		using Resource = typename Policy::Resource;
-		
+
 		ScopedResource() = default;
 		ScopedResource(Resource resource)
 			: resource(resource)
@@ -51,9 +51,17 @@ namespace Wex
 			Policy::Release(Detach());
 		}
 
+		bool IsNull() const
+		{
+			return resource == Policy::Default;
+		}
 		operator bool() const
 		{
 			return resource != Policy::Default;
+		}
+		operator Resource() const
+		{
+			return resource;
 		}
 		Resource* operator&()
 		{

@@ -133,16 +133,54 @@ namespace Wex
 			Assert.AreEqual(0, resource.resource);
 		}
 
+		TEST_METHOD(IsNull_True)
+		{
+			TestResource resource;
+			Assert.IsTrue(resource.IsNull());
+		}
+
+		TEST_METHOD(IsNull_False)
+		{
+			TestResource resource{ 1 };
+			Assert.IsFalse(resource.IsNull());
+		}
+
 		TEST_METHOD(Truthy)
 		{
 			TestResource resource{ 1 };
 			Assert.IsTrue(resource);
 		}
 
+		TEST_METHOD(TruthyInIf)
+		{
+			TestResource resource{ 1 };
+			if (resource)
+				;
+			else
+				Assert.Fail();
+		}
+
 		TEST_METHOD(Falsy)
 		{
 			TestResource resource;
 			Assert.IsFalse(resource);
+		}
+
+		TEST_METHOD(FalseInIf)
+		{
+			TestResource resource;
+			if (!resource)
+				;
+			else
+				Assert.Fail();
+		}
+
+		TEST_METHOD(AutomaticCast)
+		{
+			const auto value = 1;
+			TestResource resource{ value };
+			int result = resource;
+			Assert.AreEqual(value, result);
 		}
 
 		TEST_METHOD(AddressOf)
