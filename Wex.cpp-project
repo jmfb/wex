@@ -80,6 +80,11 @@
 						<File>Brush.cpp</File>
 						<File>Brush.Test.cpp</File>
 					</Folder>
+					<Folder name="Bitmap">
+						<File>Bitmap.h</File>
+						<File>Bitmap.cpp</File>
+						<File>Bitmap.Test.cpp</File>
+					</Folder>
 				</Folder>
 			</Folder>
 		</Folder>

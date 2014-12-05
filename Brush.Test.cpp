@@ -134,6 +134,13 @@ namespace Wex
 					Assert.AreEqual(std::string{ "CreatePatternBrush" }, exception.GetLocation());
 				});
 		}
+
+		TEST_METHOD(CreateHalftone)
+		{
+			Brush brush;
+			brush.CreateHalftone();
+			Assert.IsTrue(brush);
+		}
 	};
 }
 
