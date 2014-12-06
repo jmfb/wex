@@ -86,6 +86,23 @@
 						<File>Bitmap.Test.cpp</File>
 					</Folder>
 				</Folder>
+				<Folder name="Device Contexts">
+					<Folder name="DeviceContext">
+						<File>DeviceContext.h</File>
+						<File>DeviceContext.cpp</File>
+						<File>DeviceContext.Test.cpp</File>
+					</Folder>
+					<Folder name="PaintDeviceContext">
+						<File>PaintDeviceContext.h</File>
+						<File>PaintDeviceContext.cpp</File>
+						<File>PaintDeviceContext.Test.cpp</File>
+					</Folder>
+					<Folder name="MemoryDeviceContext">
+						<File>MemoryDeviceContext.h</File>
+						<File>MemoryDeviceContext.cpp</File>
+						<File>MemoryDeviceContext.Test.cpp</File>
+					</Folder>
+				</Folder>
 			</Folder>
 		</Folder>
 		<Folder name="Resources">
