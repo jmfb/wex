@@ -58,6 +58,15 @@ namespace Wex
 			Assert.AreEqual(height, size.cy);
 		}
 
+		TEST_METHOD(PackConstructor2)
+		{
+			const auto width = 1;
+			const auto height = 2;
+			Size size{ MAKELPARAM(width, height) };
+			Assert.AreEqual(width, size.cx);
+			Assert.AreEqual(height, size.cy);
+		}
+
 		TEST_METHOD(Set)
 		{
 			const auto width = 1;

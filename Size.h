@@ -9,14 +9,15 @@ namespace Wex
 		Size(int width, int height);
 		Size(const SIZE& size);
 		Size(const POINT& point);
-		Size(unsigned long pack);
+		Size(WPARAM pack);
+		Size(LPARAM pack);
 		Size(const Size& rhs) = default;
 		~Size() = default;
 
 		Size& operator=(const Size& rhs) = default;
 
 		void Set(int width, int height);
-		unsigned long Pack() const;
+		WPARAM Pack() const;
 
 		int GetWidth() const;
 		int GetHeight() const;

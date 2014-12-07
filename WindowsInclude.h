@@ -8,4 +8,5 @@
 
 #include <windows.h>
 #include <commctrl.h>
+#include <shellapi.h>
 

@@ -31,7 +31,13 @@ namespace Wex
 		y = size.cy;
 	}
 
-	Point::Point(unsigned long pack)
+	Point::Point(WPARAM pack)
+	{
+		x = LOWORD(pack);
+		y = HIWORD(pack);
+	}
+
+	Point::Point(LPARAM pack)
 	{
 		x = LOWORD(pack);
 		y = HIWORD(pack);
@@ -51,7 +57,7 @@ namespace Wex
 		y = top;
 	}
 
-	unsigned long Point::Pack() const
+	WPARAM Point::Pack() const
 	{
 		return MAKEWPARAM(x, y);
 	}

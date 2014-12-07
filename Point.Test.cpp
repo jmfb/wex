@@ -70,6 +70,15 @@ namespace Wex
 			Assert.AreEqual(top, point.y);
 		}
 
+		TEST_METHOD(PackConstructor2)
+		{
+			const auto left = 1;
+			const auto top = 2;
+			Point point{ MAKELPARAM(left, top) };
+			Assert.AreEqual(left, point.x);
+			Assert.AreEqual(top, point.y);
+		}
+
 		TEST_METHOD(GetCursorPos_Valid)
 		{
 			const auto left = 1;

@@ -104,6 +104,22 @@
 					</Folder>
 				</Folder>
 			</Folder>
+			<Folder name="Base Windows">
+				<Folder name="Window">
+					<File>Window.h</File>
+					<File>Window.cpp</File>
+					<File>Window.Test.cpp</File>
+				</Folder>
+				<Folder name="MessageMap">
+					<File>MessageMap.h</File>
+					<File>MessageMap.cpp</File>
+					<File>MessageMap.Test.cpp</File>
+				</Folder>
+				<Folder name="CustomWindow">
+					<File>CustomWindow.h</File>
+					<File>CustomWindow.Test.cpp</File>
+				</Folder>
+			</Folder>
 		</Folder>
 		<Folder name="Resources">
 			<File>resource.h</File>

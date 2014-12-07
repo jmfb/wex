@@ -10,7 +10,8 @@ namespace Wex
 		Point(int left, int top);
 		Point(const POINT& point);
 		Point(const SIZE& size);
-		Point(unsigned long pack);
+		Point(WPARAM pack);
+		Point(LPARAM pack);
 		Point(const Point& rhs) = default;
 		~Point() = default;
 
@@ -21,7 +22,7 @@ namespace Wex
 		static Point GetCursor();
 
 		void Set(int left, int top);
-		unsigned long Pack() const;
+		WPARAM Pack() const;
 
 		int GetLeft() const;
 		int GetTop() const;

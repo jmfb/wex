@@ -61,3 +61,7 @@ namespace Wex
 		description \
 	}
 
+#define CheckError(isError, errorCode, description) \
+	if (isError) \
+		ThrowException(#isError, errorCode, description);
+
