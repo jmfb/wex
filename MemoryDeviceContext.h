@@ -1,19 +1,25 @@
 #pragma once
 #include "DeviceContext.h"
+#include "Bitmap.h"
+#include "Rect.h"
 
 namespace Wex
 {
 	class MemoryDeviceContext : public DeviceContext
 	{
 	public:
-		MemoryDeviceContext() = default;
+		MemoryDeviceContext(HDC dc, const RECT* rc = nullptr);
 		MemoryDeviceContext(const MemoryDeviceContext& rhs) = delete;
-		~MemoryDeviceContext() = default;
+		~MemoryDeviceContext();
 
 		MemoryDeviceContext& operator=(const MemoryDeviceContext& rhs) = delete;
 
 	private:
 		friend class MemoryDeviceContextTest;
+		DeviceContext originalDeviceContext;
+		Bitmap bitmap;
+		HGDIOBJ oldBitmap = nullptr;
+		Rect rect;
 	};
 }
 

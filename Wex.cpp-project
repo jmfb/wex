@@ -102,6 +102,11 @@
 						<File>MemoryDeviceContext.cpp</File>
 						<File>MemoryDeviceContext.Test.cpp</File>
 					</Folder>
+					<Folder name="ClientDeviceContext">
+						<File>ClientDeviceContext.h</File>
+						<File>ClientDeviceContext.cpp</File>
+						<File>ClientDeviceContext.Test.cpp</File>
+					</Folder>
 				</Folder>
 			</Folder>
 			<Folder name="Base Windows">

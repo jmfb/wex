@@ -8,6 +8,11 @@ namespace Wex
 		: dc(dc)
 	{
 	}
+
+	DeviceContext::operator HDC() const
+	{
+		return dc;
+	}
 	
 	void DeviceContext::FillRect(const RECT& rect, HBRUSH brush)
 	{
@@ -15,7 +20,7 @@ namespace Wex
 		auto result = ::FillRect(dc, &rect, brush);
 		CheckLastWindowsError(!result, "FillRect");
 	}
-	
+
 	void DeviceContext::FillSolidRect(const RECT& rect, COLORREF color)
 	{
 		AssertValid();
@@ -33,11 +38,44 @@ namespace Wex
 		SetBackColor(oldColor);
 	}
 
+	Rect DeviceContext::MeasureString(const std::string& text, const RECT& rect)
+	{
+		AssertValid();
+		auto boundingRect = rect;
+		::DrawText(
+			dc,
+			text.c_str(),
+			text.size(),
+			&boundingRect,
+			DT_SINGLELINE|DT_NOPREFIX|DT_LEFT|DT_TOP|DT_CALCRECT);
+		return boundingRect;
+	}
+
+	void DeviceContext::DrawText(const std::string& text, const RECT& rect)
+	{
+		AssertValid();
+		auto boundingRect = rect;
+		::DrawText(
+			dc,
+			text.c_str(),
+			text.size(),
+			&boundingRect,
+			DT_SINGLELINE|DT_NOPREFIX|DT_LEFT|DT_TOP);
+	}
+
 	COLORREF DeviceContext::SetBackColor(COLORREF color)
 	{
 		AssertValid();
 		auto oldColor = ::SetBkColor(dc, color);
 		CheckLastWindowsError(oldColor == CLR_INVALID, "SetBkColor");
+		return oldColor;
+	}
+
+	COLORREF DeviceContext::SetTextColor(COLORREF color)
+	{
+		AssertValid();
+		auto oldColor = ::SetTextColor(dc, color);
+		CheckLastWindowsError(oldColor == CLR_INVALID, "SetTextColor");
 		return oldColor;
 	}
 	
