@@ -260,6 +260,10 @@ namespace Wex
 			result = OnMouseActivate(reinterpret_cast<HWND>(wparam), LOWORD(lparam), HIWORD(lparam));
 			break;
 
+		case WM_MOUSELEAVE:
+			OnMouseLeave();
+			break;
+
 		case WM_MOUSEMOVE:
 			OnMouseMove({ lparam }, wparam);
 			break;
@@ -637,6 +641,10 @@ namespace Wex
 	{
 		NotHandled();
 		return 0;
+	}
+	void MessageMap::OnMouseLeave()
+	{
+		NotHandled();
 	}
 	void MessageMap::OnMouseMove(const Point& pt, unsigned long flags)
 	{

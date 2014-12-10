@@ -20,12 +20,12 @@ namespace Wex
 	{
 		handle = value;
 	}
-	
+
 	HWND Window::GetHandle() const
 	{
 		return handle;
 	}
-	
+
 	bool Window::IsValid() const
 	{
 		return ::IsWindow(handle) != 0;
@@ -878,6 +878,17 @@ namespace Wex
 		return retval;
 	}
 
+	void Window::TrackMouse(unsigned long flags, unsigned long hoverTime)
+	{
+		TRACKMOUSEEVENT event;
+		event.cbSize = sizeof(event);
+		event.dwFlags = flags;
+		event.hwndTrack = handle;
+		event.dwHoverTime = hoverTime;
+		auto result = ::TrackMouseEvent(&event);
+		CheckLastWindowsError(!result, "TrackMouseEvent");
+	}
+	
 	bool Window::operator==(HWND value) const
 	{
 		return handle == value;

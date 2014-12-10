@@ -81,6 +81,7 @@ namespace Wex
 		virtual int OnMenuChar(int c, int type, HMENU menu);
 		virtual void OnMenuSelect(int id, int flags, HMENU menu);
 		virtual int OnMouseActivate(HWND hwnd, int hittest, UINT msg);
+		virtual void OnMouseLeave();
 		virtual void OnMouseMove(const Point& pt, unsigned long flags);
 		virtual bool OnMouseWheel(const Point& pt, short delta, unsigned long flags);
 		virtual void OnMove(const Point& pt);
@@ -142,7 +143,7 @@ namespace Wex
 
 	private:
 		using CommandHandler = std::function<void(WORD,WORD,HWND)>;
-		
+
 		template <typename Class>
 		CommandHandler CreateCommandHandler(void (Class::*memberFunction)())
 		{

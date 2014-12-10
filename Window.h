@@ -212,6 +212,7 @@ namespace Wex
 		void Hide() const;
 		Rect MapRect(HWND hwndTo, const RECT& rc) const;
 		Rect MapRectToParent(const RECT& rc) const;
+		void TrackMouse(unsigned long flags, unsigned long hoverTime = 0);
 
 		bool operator==(HWND value) const;
 		bool operator!=(HWND value) const;
