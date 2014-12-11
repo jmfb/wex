@@ -15,7 +15,9 @@ namespace Wex
 		DeviceContext& operator=(const DeviceContext& rhs) = delete;
 
 		operator HDC() const;
-		
+
+		HGDIOBJ Select(HGDIOBJ object);
+
 		void FillRect(const RECT& rect, HBRUSH brush);
 		void FillSolidRect(const RECT& rect, COLORREF color);
 

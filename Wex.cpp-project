@@ -85,6 +85,16 @@
 						<File>Bitmap.cpp</File>
 						<File>Bitmap.Test.cpp</File>
 					</Folder>
+					<Folder name="Font">
+						<File>Font.h</File>
+						<File>Font.cpp</File>
+						<File>Font.Test.cpp</File>
+					</Folder>
+					<Folder name="Pen">
+						<File>Pen.h</File>
+						<File>Pen.cpp</File>
+						<File>Pen.Test.cpp</File>
+					</Folder>
 				</Folder>
 				<Folder name="Device Contexts">
 					<Folder name="DeviceContext">
@@ -129,6 +139,10 @@
 					<File>CustomWindow.h</File>
 					<File>CustomWindow.Test.cpp</File>
 				</Folder>
+			</Folder>
+			<Folder name="Range">
+				<File>Range.h</File>
+				<File>Range.Test.cpp</File>
 			</Folder>
 		</Folder>
 		<Folder name="Resources">

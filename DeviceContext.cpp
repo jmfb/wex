@@ -13,6 +13,12 @@ namespace Wex
 	{
 		return dc;
 	}
+
+	HGDIOBJ DeviceContext::Select(HGDIOBJ object)
+	{
+		AssertValid();
+		return ::SelectObject(dc, object);
+	}
 	
 	void DeviceContext::FillRect(const RECT& rect, HBRUSH brush)
 	{
@@ -78,7 +84,7 @@ namespace Wex
 		CheckLastWindowsError(oldColor == CLR_INVALID, "SetTextColor");
 		return oldColor;
 	}
-	
+
 	void DeviceContext::AssertValid() const
 	{
 		if (dc == nullptr)
