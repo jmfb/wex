@@ -7,13 +7,13 @@ namespace Wex
 	MemoryDeviceContext::MemoryDeviceContext(HDC dc, const RECT* rc)
 		: originalDeviceContext{ dc }
 	{
+		this->dc = ::CreateCompatibleDC(originalDeviceContext);
+		CheckLastWindowsError(dc == nullptr, "CreateCompatibleDC");
+
 		if (rc == nullptr)
 			::GetClipBox(dc, &rect);
 		else
 			rect = *rc;
-
-		this->dc = ::CreateCompatibleDC(originalDeviceContext);
-		CheckLastWindowsError(dc == nullptr, "CreateCompatibleDC");
 
 		auto devicePixels = rect.GetSize();
 		::LPtoDP(dc, reinterpret_cast<POINT*>(&devicePixels), 1);
@@ -22,7 +22,7 @@ namespace Wex
 
 		::SetWindowOrgEx(this->dc, rect.left, rect.top, nullptr);
 	}
-	
+
 	MemoryDeviceContext::~MemoryDeviceContext()
 	{
 		::BitBlt(

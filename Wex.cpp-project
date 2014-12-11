@@ -107,6 +107,11 @@
 						<File>ClientDeviceContext.cpp</File>
 						<File>ClientDeviceContext.Test.cpp</File>
 					</Folder>
+					<Folder name="WindowDeviceContext">
+						<File>WindowDeviceContext.h</File>
+						<File>WindowDeviceContext.cpp</File>
+						<File>WindowDeviceContext.Test.cpp</File>
+					</Folder>
 				</Folder>
 			</Folder>
 			<Folder name="Base Windows">

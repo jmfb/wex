@@ -8,9 +8,9 @@ namespace Wex
 		: window(window)
 	{
 		dc = ::BeginPaint(window, &paintStruct);
-		CheckLastWindowsError(!dc, "BeginPaint");
+		CheckLastWindowsError(dc == nullptr, "BeginPaint");
 	}
-	
+
 	PaintDeviceContext::~PaintDeviceContext()
 	{
 		::EndPaint(window, &paintStruct);
