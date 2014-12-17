@@ -19,7 +19,7 @@ namespace Wex
 		AssertValid();
 		return ::SelectObject(dc, object);
 	}
-	
+
 	void DeviceContext::FillRect(const RECT& rect, HBRUSH brush)
 	{
 		AssertValid();
@@ -57,6 +57,15 @@ namespace Wex
 		return boundingRect;
 	}
 
+	Size DeviceContext::GetTextSize()
+	{
+		AssertValid();
+		TEXTMETRIC metrics = {0};
+		auto result = ::GetTextMetrics(dc, &metrics);
+		CheckLastWindowsError(!result, "GetTextMetrics");
+		return { metrics.tmAveCharWidth, metrics.tmHeight };
+	}
+
 	void DeviceContext::DrawText(const std::string& text, const RECT& rect)
 	{
 		AssertValid();
@@ -77,12 +86,53 @@ namespace Wex
 		return oldColor;
 	}
 
+	COLORREF DeviceContext::GetBackColor()
+	{
+		AssertValid();
+		auto result = ::GetBkColor(dc);
+		CheckLastWindowsError(result == CLR_INVALID, "GetBkColor");
+		return result;
+	}
+
 	COLORREF DeviceContext::SetTextColor(COLORREF color)
 	{
 		AssertValid();
 		auto oldColor = ::SetTextColor(dc, color);
 		CheckLastWindowsError(oldColor == CLR_INVALID, "SetTextColor");
 		return oldColor;
+	}
+
+	COLORREF DeviceContext::GetTextColor()
+	{
+		AssertValid();
+		auto result = ::GetTextColor(dc);
+		CheckLastWindowsError(result == CLR_INVALID, "GetTextColor");
+		return result;
+	}
+
+	Point DeviceContext::MoveTo(const POINT& point)
+	{
+		AssertValid();
+		Point previousPosition;
+		auto result = ::MoveToEx(dc, point.x, point.y, &previousPosition);
+		CheckLastWindowsError(!result, "MoveToEx");
+		return previousPosition;
+	}
+
+	void DeviceContext::LineTo(const POINT& point)
+	{
+		AssertValid();
+		auto result = ::LineTo(dc, point.x, point.y);
+		CheckLastWindowsError(!result, "LineTo");
+	}
+
+	Point DeviceContext::DrawLine(const std::vector<POINT>& points)
+	{
+		CheckError(points.size() < 2, 0, "Line must contain at least 2 points.");
+		auto previousPosition = MoveTo(points[0]);
+		for (auto index = 1ul; index < points.size(); ++index)
+			LineTo(points[index]);
+		return previousPosition;
 	}
 
 	void DeviceContext::AssertValid() const
