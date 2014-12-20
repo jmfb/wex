@@ -114,7 +114,7 @@ namespace Wex
 				[]{ MemoryDeviceContext{ nullptr }; },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CreateCompatibleDC" }, exception.GetLocation());
+					Assert.AreEqual("CreateCompatibleDC", exception.GetLocation());
 				});
 		}
 	};

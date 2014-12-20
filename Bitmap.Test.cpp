@@ -85,7 +85,7 @@ namespace Wex
 				[]{ Bitmap{}.Create({ 0, 0 }, 0, 0, nullptr); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CreateBitmap" }, exception.GetLocation());
+					Assert.AreEqual("CreateBitmap", exception.GetLocation());
 				});
 		}
 
@@ -118,7 +118,7 @@ namespace Wex
 				[]{ Bitmap{}.CreateCompatible(nullptr, { 0, 0 }); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CreateCompatibleBitmap" }, exception.GetLocation());
+					Assert.AreEqual("CreateCompatibleBitmap", exception.GetLocation());
 				});
 		}
 	};

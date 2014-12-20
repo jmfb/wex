@@ -44,7 +44,7 @@ namespace Wex
 			}
 			catch (const Exception& exception)
 			{
-				Assert.AreEqual(std::string{ "InitCommonControlsEx" }, exception.GetLocation());
+				Assert.AreEqual("InitCommonControlsEx", exception.GetLocation());
 			}
 		}
 

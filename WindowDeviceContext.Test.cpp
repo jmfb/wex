@@ -43,7 +43,7 @@ namespace Wex
 				[]{ WindowDeviceContext{ nullptr }; },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "GetWindowDC" }, exception.GetLocation());
+					Assert.AreEqual("GetWindowDC", exception.GetLocation());
 				});
 		}
 	};

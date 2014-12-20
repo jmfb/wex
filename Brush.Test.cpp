@@ -103,7 +103,7 @@ namespace Wex
 				[]{ Brush{}.CreateSolid(0); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CreateSolidBrush" }, exception.GetLocation());
+					Assert.AreEqual("CreateSolidBrush", exception.GetLocation());
 				});
 		}
 
@@ -131,7 +131,7 @@ namespace Wex
 				[]{ Brush{}.CreatePattern(nullptr); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CreatePatternBrush" }, exception.GetLocation());
+					Assert.AreEqual("CreatePatternBrush", exception.GetLocation());
 				});
 		}
 

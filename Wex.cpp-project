@@ -140,14 +140,38 @@
 					<File>CustomWindow.Test.cpp</File>
 				</Folder>
 			</Folder>
-			<Folder name="Range">
-				<File>Range.h</File>
-				<File>Range.Test.cpp</File>
+			<Folder name="File System">
+				<Folder name="Path">
+					<File>Path.h</File>
+					<File>Path.cpp</File>
+					<File>Path.Test.cpp</File>
+				</Folder>
+				<Folder name="File">
+					<File>File.h</File>
+					<File>File.cpp</File>
+					<File>File.Test.cpp</File>
+				</Folder>
+				<Folder name="Directory">
+					<File>Directory.h</File>
+					<File>Directory.cpp</File>
+					<File>Directory.Test.cpp</File>
+				</Folder>
 			</Folder>
-			<Folder name="String">
-				<File>String.h</File>
-				<File>String.cpp</File>
-				<File>String.Test.cpp</File>
+			<Folder name="Type Utilities">
+				<Folder name="String">
+					<File>String.h</File>
+					<File>String.cpp</File>
+					<File>String.Test.cpp</File>
+				</Folder>
+				<Folder name="Range">
+					<File>Range.h</File>
+					<File>Range.Test.cpp</File>
+				</Folder>
+				<Folder name="Time">
+					<File>Time.h</File>
+					<File>Time.cpp</File>
+					<File>Time.Test.cpp</File>
+				</Folder>
 			</Folder>
 		</Folder>
 		<Folder name="Resources">

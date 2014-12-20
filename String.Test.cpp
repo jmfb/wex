@@ -13,7 +13,7 @@ namespace Wex
 
 		TEST_METHOD(TrimStart_Empty)
 		{
-			Assert.AreEqual(std::string{ "" }, String::TrimStart(""));
+			Assert.IsEmpty(String::TrimStart(""));
 		}
 
 		TEST_METHOD(TrimStart_LeadingSpace)
@@ -30,12 +30,12 @@ namespace Wex
 
 		TEST_METHOD(TrimStart_AllSpaces)
 		{
-			Assert.AreEqual(std::string{ "" }, String::TrimStart("  "));
+			Assert.IsEmpty(String::TrimStart("  "));
 		}
 
 		TEST_METHOD(TrimEnd_Empty)
 		{
-			Assert.AreEqual(std::string{ "" }, String::TrimEnd(""));
+			Assert.IsEmpty(String::TrimEnd(""));
 		}
 
 		TEST_METHOD(TrimEnd_TrailingSpaces)
@@ -52,12 +52,12 @@ namespace Wex
 
 		TEST_METHOD(TrimEnd_AllSpaces)
 		{
-			Assert.AreEqual(std::string{ "" }, String::TrimEnd("  "));
+			Assert.IsEmpty(String::TrimEnd("  "));
 		}
 
 		TEST_METHOD(Trim_Empty)
 		{
-			Assert.AreEqual(std::string{ "" }, String::Trim(""));
+			Assert.IsEmpty(String::Trim(""));
 		}
 
 		TEST_METHOD(Trim_LeadingAndTrailingSpaces)
@@ -68,7 +68,7 @@ namespace Wex
 
 		TEST_METHOD(Trim_AllSpaces)
 		{
-			Assert.AreEqual(std::string{ "" }, String::Trim("  "));
+			Assert.IsEmpty(String::Trim("  "));
 		}
 	};
 }

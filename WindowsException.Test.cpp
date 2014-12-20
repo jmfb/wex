@@ -15,13 +15,13 @@ namespace Wex
 		TEST_METHOD(FormatMessage_Valid)
 		{
 			auto result = WindowsException::FormatMessage(ERROR_ACCESS_DENIED);
-			Assert.AreEqual(std::string{ "Access is denied.\r\n" }, result);
+			Assert.AreEqual("Access is denied.\r\n", result);
 		}
 
 		TEST_METHOD(FormatMessage_Invalid)
 		{
 			auto result = WindowsException::FormatMessage(-1);
-			Assert.AreEqual(std::string{ "" }, result);
+			Assert.IsEmpty(result);
 		}
 
 		TEST_METHOD(CheckLastWindowsError_IsNotError)

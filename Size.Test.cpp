@@ -203,9 +203,9 @@ namespace Wex
 			}
 			catch (const Exception& exception)
 			{
-				Assert.AreEqual(std::string{ "divisor" }, exception.GetLocation());
+				Assert.AreEqual("divisor", exception.GetLocation());
 				Assert.AreEqual(0, exception.GetErrorCode());
-				Assert.AreEqual(std::string{ "Divide by zero." }, exception.GetDescription());
+				Assert.AreEqual("Divide by zero.", exception.GetDescription());
 			}
 		}
 

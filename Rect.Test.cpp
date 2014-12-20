@@ -124,7 +124,7 @@ namespace Wex
 				[]{ Rect{}.Set(0, 0, 0, 0); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "SetRect" }, exception.GetLocation());
+					Assert.AreEqual("SetRect", exception.GetLocation());
 				});
 		}
 
@@ -149,7 +149,7 @@ namespace Wex
 				[]{ Rect{ 0, 0, 0, 0 }.SetEmpty(); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "SetRectEmpty" }, exception.GetLocation());
+					Assert.AreEqual("SetRectEmpty", exception.GetLocation());
 				});
 		}
 
@@ -179,7 +179,7 @@ namespace Wex
 				[]{ Rect{}.Copy({}); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "CopyRect" }, exception.GetLocation());
+					Assert.AreEqual("CopyRect", exception.GetLocation());
 				});
 		}
 
@@ -289,7 +289,7 @@ namespace Wex
 				[]{ Rect{}.Offset({}); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "OffsetRect" }, exception.GetLocation());
+					Assert.AreEqual("OffsetRect", exception.GetLocation());
 				});
 		}
 
@@ -334,7 +334,7 @@ namespace Wex
 				[]{ Rect{}.Inflate({}); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "InflateRect" }, exception.GetLocation());
+					Assert.AreEqual("InflateRect", exception.GetLocation());
 				});
 		}
 
@@ -366,7 +366,7 @@ namespace Wex
 				[]{ Rect{}.Adjust(0); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "AdjustWindowRectEx" }, exception.GetLocation());
+					Assert.AreEqual("AdjustWindowRectEx", exception.GetLocation());
 				});
 		}
 

@@ -45,7 +45,7 @@ namespace Wex
 				[]{ PaintDeviceContext{ nullptr }; },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "BeginPaint" }, exception.GetLocation());
+					Assert.AreEqual("BeginPaint", exception.GetLocation());
 				});
 		}
 	};

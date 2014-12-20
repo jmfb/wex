@@ -114,7 +114,7 @@ namespace Wex
 			}
 			catch (const Exception& exception)
 			{
-				Assert.AreEqual(std::string{ "GetCursorPos" }, exception.GetLocation());
+				Assert.AreEqual("GetCursorPos", exception.GetLocation());
 			}
 		}
 

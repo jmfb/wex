@@ -54,7 +54,7 @@ namespace Wex
 				[]{ DeviceContext{}.FillRect({ 0, 0, 0, 0 }, nullptr); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "FillRect" }, exception.GetLocation());
+					Assert.AreEqual("FillRect", exception.GetLocation());
 				});
 		}
 
@@ -98,7 +98,7 @@ namespace Wex
 				[]{ DeviceContext{}.SetBackColor(0); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "SetBkColor" }, exception.GetLocation());
+					Assert.AreEqual("SetBkColor", exception.GetLocation());
 				});
 		}
 
@@ -113,9 +113,9 @@ namespace Wex
 				[]{ DeviceContext{}.AssertValid(); },
 				[](const Exception& exception)
 				{
-					Assert.AreEqual(std::string{ "dc" }, exception.GetLocation());
+					Assert.AreEqual("dc", exception.GetLocation());
 					Assert.AreEqual(0, exception.GetErrorCode());
-					Assert.AreEqual(std::string{ "Null device context." }, exception.GetDescription());
+					Assert.AreEqual("Null device context.", exception.GetDescription());
 				});
 		}
 	};

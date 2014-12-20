@@ -90,11 +90,11 @@ namespace Wex
 			}
 			catch (const Exception& exception)
 			{
-				Assert.AreEqual(std::string{ __FILE__ }, exception.GetFile());
+				Assert.AreEqual(__FILE__, exception.GetFile());
 				Assert.AreEqual(previousLine + 1, exception.GetLine());
-				Assert.AreEqual(std::string{ __DATE__ " " __TIME__ }, exception.GetWhenCompiled());
-				Assert.AreEqual(std::string{ __TIMESTAMP__ }, exception.GetWhenModified());
-				Assert.AreEqual(std::string{ __PRETTY_FUNCTION__ }, exception.GetFunction());
+				Assert.AreEqual(__DATE__ " " __TIME__, exception.GetWhenCompiled());
+				Assert.AreEqual(__TIMESTAMP__, exception.GetWhenModified());
+				Assert.AreEqual(__PRETTY_FUNCTION__, exception.GetFunction());
 				Assert.AreEqual(location, exception.GetLocation());
 				Assert.AreEqual(errorCode, exception.GetErrorCode());
 				Assert.AreEqual(description, exception.GetDescription());
