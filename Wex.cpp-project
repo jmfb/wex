@@ -144,6 +144,11 @@
 				<File>Range.h</File>
 				<File>Range.Test.cpp</File>
 			</Folder>
+			<Folder name="String">
+				<File>String.h</File>
+				<File>String.cpp</File>
+				<File>String.Test.cpp</File>
+			</Folder>
 		</Folder>
 		<Folder name="Resources">
 			<File>resource.h</File>
