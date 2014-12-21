@@ -22,7 +22,7 @@ namespace Wex
 				{
 					Assert.AreEqual(module, m);
 					Assert.IsNotNull(b);
-					Assert.AreEqual(4096, l);
+					Assert.AreEqual(MAX_PATH, l);
 					std::strcpy(b, "result");
 					return 1;
 				});
@@ -77,6 +77,11 @@ namespace Wex
 		TEST_METHOD(GetPath_WithSlash)
 		{
 			Assert.AreEqual("path", Path::GetPath("path\\filename"));
+		}
+
+		TEST_METHOD(GetAbsolutePath)
+		{
+			Assert.AreEqual("c:\\first\\last", Path::GetAbsolutePath("c:\\first\\.\\middle\\..\\last"));
 		}
 
 		TEST_METHOD(GetLastFolder)

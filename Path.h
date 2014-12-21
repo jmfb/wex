@@ -9,6 +9,7 @@ namespace Wex
 		static std::string GetModuleFileName(HMODULE module = nullptr);
 		static std::string GetFileName(const std::string& fullPath);
 		static std::string GetPath(const std::string& fullPath);
+		static std::string GetAbsolutePath(const std::string& relativePath);
 		static std::string GetLastFolder(const std::string& fullPath);
 		static std::string GetTitle(const std::string& fullPath);
 		static std::string GetExtension(const std::string& fullPath);
