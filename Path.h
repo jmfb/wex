@@ -17,6 +17,15 @@ namespace Wex
 			const std::string& path1,
 			const std::string& path2);
 
+		template <typename... Parts>
+		static std::string Combine(
+			const std::string& path1,
+			const std::string& path2,
+			Parts... parts)
+		{
+			return Combine(Combine(path1, path2), parts...);
+		}
+
 	private:
 		friend class PathTest;
 	};

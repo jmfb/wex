@@ -11,11 +11,18 @@ namespace Wex
 	};
 }
 
+#define ThrowWindowsError(errorCode, location) \
+	{ \
+		int intErrorCode = errorCode; \
+		auto description = Wex::WindowsException::FormatMessage(intErrorCode); \
+		ThrowException(location, intErrorCode, description); \
+	}
+
+#define CheckWindowsError(isError, errorCode, location) \
+	if (isError) \
+		ThrowWindowError(errorCode, location);
+
 #define CheckLastWindowsError(isError, location) \
 	if (isError) \
-	{ \
-		int errorCode = ::GetLastError(); \
-		auto description = Wex::WindowsException::FormatMessage(errorCode); \
-		ThrowException(location, errorCode, description); \
-	}
+		ThrowWindowsError(::GetLastError(), location);
 

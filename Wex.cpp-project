@@ -156,6 +156,16 @@
 					<File>Directory.cpp</File>
 					<File>Directory.Test.cpp</File>
 				</Folder>
+				<Folder name="FileInfo">
+					<File>FileInfo.h</File>
+					<File>FileInfo.cpp</File>
+					<File>FileInfo.Test.cpp</File>
+				</Folder>
+				<Folder name="FindFile">
+					<File>FindFile.h</File>
+					<File>FindFile.cpp</File>
+					<File>FindFile.Test.cpp</File>
+				</Folder>
 			</Folder>
 			<Folder name="Type Utilities">
 				<Folder name="String">
@@ -171,6 +181,11 @@
 					<File>Time.h</File>
 					<File>Time.cpp</File>
 					<File>Time.Test.cpp</File>
+				</Folder>
+				<Folder name="Flag">
+					<File>Flag.h</File>
+					<File>Flag.cpp</File>
+					<File>Flag.Test.cpp</File>
 				</Folder>
 			</Folder>
 		</Folder>

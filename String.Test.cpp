@@ -70,6 +70,17 @@ namespace Wex
 		{
 			Assert.IsEmpty(String::Trim("  "));
 		}
+
+		TEST_METHOD(PadRight_TooLong)
+		{
+			const std::string value{ "value" };
+			Assert.AreEqual(value, String::PadRight(value, value.size(), ' '));
+		}
+
+		TEST_METHOD(PadRight_Valid)
+		{
+			Assert.AreEqual("valueXX", String::PadRight("value", 7, 'X'));
+		}
 	};
 }
 
