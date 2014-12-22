@@ -65,6 +65,18 @@ namespace Wex
 			param);
 	}
 
+	void Window::Destroy()
+	{
+		AssertIsValid();
+		::DestroyWindow(handle);
+		handle = nullptr;
+	}
+
+	void Window::Close()
+	{
+		Post(WM_CLOSE);
+	}
+	
 	LRESULT Window::Send(UINT msg) const
 	{
 		return Send<WPARAM>(msg, 0);
@@ -186,13 +198,6 @@ namespace Wex
 	{
 		AssertIsValid();
 		return { ::GetDlgItem(handle, id) };
-	}
-
-	void Window::Destroy()
-	{
-		AssertIsValid();
-		::DestroyWindow(handle);
-		handle = nullptr;
 	}
 
 	void Window::SetFont(HFONT font, bool redraw) const
@@ -888,7 +893,7 @@ namespace Wex
 		auto result = ::TrackMouseEvent(&event);
 		CheckLastWindowsError(!result, "TrackMouseEvent");
 	}
-	
+
 	bool Window::operator==(HWND value) const
 	{
 		return handle == value;

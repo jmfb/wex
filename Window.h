@@ -40,6 +40,7 @@ namespace Wex
 			HMENU menu = 0,
 			void* param = 0);
 		void Destroy();
+		void Close();
 
 		//Send Message Variations
 		template <typename TW, typename TL>
