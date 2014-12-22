@@ -16,6 +16,9 @@ namespace Wex
 
 		Window& operator=(const Window& rhs) = default;
 
+		static const auto ChildWindowStyle =
+			WS_CHILD|WS_VISIBLE|WS_CLIPSIBLINGS|WS_CLIPCHILDREN;
+
 		operator HWND() const;
 		void SetHandle(HWND value);
 		HWND GetHandle() const;
