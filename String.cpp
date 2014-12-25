@@ -2,6 +2,7 @@
 #include <cctype>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 namespace Wex
 {
@@ -42,6 +43,38 @@ namespace Wex
 		std::ostringstream out;
 		out << std::setw(length) << std::setfill(padding) << std::left << value;
 		return out.str();
+	}
+
+	std::string String::PadLeft(
+		const std::string& value,
+		int length,
+		char padding)
+	{
+		std::ostringstream out;
+		out << std::setw(length) << std::setfill(padding) << std::right << value;
+		return out.str();
+	}
+
+	std::string String::ToLower(const std::string& value)
+	{
+		auto result = value;
+		std::transform(
+			result.begin(),
+			result.end(),
+			result.begin(),
+			[](char c){ return std::tolower(c); });
+		return result;
+	}
+
+	std::string String::ToUpper(const std::string& value)
+	{
+		auto result = value;
+		std::transform(
+			result.begin(),
+			result.end(),
+			result.begin(),
+			[](char c){ return std::toupper(c); });
+		return result;
 	}
 }
 

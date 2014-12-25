@@ -14,7 +14,14 @@ namespace Wex
 			const std::string& value,
 			int length,
 			char padding = ' ');
+		static std::string PadLeft(
+			const std::string& value,
+			int length,
+			char padding = ' ');
 
+		static std::string ToLower(const std::string& value);
+		static std::string ToUpper(const std::string& value);
+		
 	private:
 		friend class StringTest;
 	};

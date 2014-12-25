@@ -134,6 +134,7 @@ namespace Wex
 		void HandleCommand(WORD id, MemberFunction memberFunction)
 		{
 			commandHandlers[{ id, 0 }] = CreateCommandHandler(memberFunction);
+			commandHandlers[{ id, 1 }] = CreateCommandHandler(memberFunction);
 		}
 		template <typename MemberFunction>
 		void HandleNotify(UINT id, UINT code, MemberFunction memberFunction)
