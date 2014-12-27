@@ -123,6 +123,11 @@
 						<File>WindowDeviceContext.Test.cpp</File>
 					</Folder>
 				</Folder>
+				<Folder name="Icon">
+					<File>Icon.h</File>
+					<File>Icon.cpp</File>
+					<File>Icon.Test.cpp</File>
+				</Folder>
 			</Folder>
 			<Folder name="Base Windows">
 				<Folder name="Window">
