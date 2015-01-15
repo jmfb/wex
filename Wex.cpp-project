@@ -181,6 +181,8 @@
 				<Folder name="Range">
 					<File>Range.h</File>
 					<File>Range.Test.cpp</File>
+					<File>IndexIterator.h</File>
+					<File>IndexSequence.h</File>
 				</Folder>
 				<Folder name="Time">
 					<File>Time.h</File>

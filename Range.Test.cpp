@@ -11,6 +11,14 @@ namespace Wex
 		{
 		}
 
+		TEST_METHOD(IndexRange)
+		{
+			std::vector<int> values{ 1, 2, 3, 4 };
+			auto sum = 0;
+			for (auto index: Indexes(values.size()))
+				sum += values[index];
+			Assert.AreEqual(10, sum);
+		}
 	};
 }
 
